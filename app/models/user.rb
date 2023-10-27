@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :posts
   has_many :comments
+  has_many :likes
   attribute :bio, :string
 
   def three_recent_posts
