@@ -4,6 +4,10 @@ class Post < ApplicationRecord
   has_many :likes
   attribute :text, :string
 
+  def five_recent_comments
+    comments.order(created_at: :desc).limit(5)
+  end
+
   private
 
   def update_post_counter
