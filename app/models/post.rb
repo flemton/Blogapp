@@ -3,4 +3,10 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
   attribute :text, :string
+
+  private
+
+  def update_post_counter
+    author.update(posts_counter: author.posts.all.length)
+  end
 end
