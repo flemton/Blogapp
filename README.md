@@ -37,19 +37,17 @@
 - PostgreSQL
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://expressjs.com](https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://expressjs.com](https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -73,8 +71,6 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://google.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -131,13 +127,6 @@ To run tests, run the following command:
 
 You can deploy this project using:
 
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,9 +147,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Add authentication]**
+- [ ] **[Add ability to edit user details]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,7 +166,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project...
+If you like this project kindly consider giving it a star⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
