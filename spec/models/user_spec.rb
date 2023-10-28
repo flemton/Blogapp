@@ -21,6 +21,10 @@ RSpec.describe User, type: :model do
     user.posts_counter = 'string'
     expect(user).to_not be_valid
   end
+  it 'it is valid with a positive posts_counter value' do
+    user.posts_counter = 1
+    expect(user).to be_valid
+end
   describe '#most_three_recent_post' do
     let(:user) { User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0) }
     let!(:post1) { Post.new(author: user, text: '1', title: '1') }
