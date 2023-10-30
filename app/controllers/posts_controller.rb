@@ -6,5 +6,4 @@ class PostsController < ApplicationController
   def show
     # For displaying a single post by a user
   end
-  
 end
