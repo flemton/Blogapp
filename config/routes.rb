@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index'  # For displaying all users
   get '/users/:id', to: 'users#show', as: 'user'  # For displaying a single user
+  get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts' # For displaying a user's posts
+
 end
