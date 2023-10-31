@@ -11,6 +11,11 @@ RSpec.describe 'Users', type: :request do
       get users_path
       expect(response).to render_template(:index)
     end
+    
+    it "includes the correct placeholder text in the response body" do
+      get users_path
+      expect(response.body).to include("User name") # Placeholder text in the view
+    end
   end
 
   describe 'GET /users/:id' do
