@@ -52,5 +52,19 @@ RSpec.describe 'Posts', type: :request do
       get user_post_path(user, post)
       expect(response).to render_template(:show)
     end
+
+    it "includes the correct placeholder text in the response body" do
+      user = User.new(id: 1, name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
+                      posts_counter: 1)
+      post = Post.new(
+        id: 1,
+        title: 'Sample Title',
+        author: user,
+        comments_counter: 2,
+        likes_counter: 3
+      )
+      get user_post_path(user, post)
+      expect(response.body).to include("Post by user") # Placeholder text in the view
+    end
   end
 end
