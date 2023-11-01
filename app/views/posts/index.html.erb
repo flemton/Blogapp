@@ -12,5 +12,10 @@
       <p><%= post.content%><p>
       <p>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </p>
     </div>
+    <div>
+      <% post.comments.limit(5).each do |comment| %>
+        <p><strong><%= comment.author.name %> : </strong><%= comment.content %></p>
+      <% end %>
+    </div>
   <% end %>
 </section>
