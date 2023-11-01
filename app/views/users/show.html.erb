@@ -1,1 +1,6 @@
-<p>Here is a list of posts for a given user</p>
+<div><img src="<%= @user.photo%>" alt="Photo">
+    <div>
+      <h4>Name: <%= link_to @user.name, user_path(@user) %></h4>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+</div>
