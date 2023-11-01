@@ -1,3 +1,4 @@
 <div>
   <h4><%= @post.title %> by <%= @post.author.name %></h4>
+  <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
 </div>
