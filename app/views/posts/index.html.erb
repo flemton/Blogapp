@@ -4,3 +4,13 @@
       <p>Number of posts: <%= @user.posts_counter %></p>
     </div>
 </div>
+
+<section>
+  <% @posts.each do |post| %>
+    <div>
+      <h4><%= link_to post.title, user_post_path(post.author, post) %></h4>
+      <p><%= post.content%><p>
+      <p>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </p>
+    </div>
+  <% end %>
+</section>
