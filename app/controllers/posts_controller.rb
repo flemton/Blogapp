@@ -7,5 +7,6 @@ class PostsController < ApplicationController
 
   def show
     # For displaying a single post by a user
+    @post = Post.find(params[:post_id])
   end
 end
