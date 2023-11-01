@@ -1,20 +1,11 @@
 <section>
-  <div>
-    <h3>User name</h3>
-  </div>
-  <div>
-    <h3>User name</h3>
-  </div>
-  <div>
-    <h3>User name</h3>
-  </div>
-  <div>
-    <h3>User name</h3>
-  </div>
-  <div>
-    <h3>User name</h3>
-  </div>
-  <div>
-    <h3>User name</h3>
-  </div>
+  <h1>All Users</h1>
+  <% @users.each do |user| %>
+    <div><img src="<%= user.photo%>" alt="Photo">
+    <div>
+      <h4>Name: <%= link_to user.name, user_path(user) %></h4>
+      <p>Number of posts: <%= user.posts_counter %></p>
+    </div>
+    </div>
+  <% end %>
 </section>
