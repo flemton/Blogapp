@@ -2,3 +2,16 @@
   <h4><%= @post.title %> by <%= @post.author.name %></h4>
   <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
 </div>
+<p> <%= @post.content %></p>
+
+<div>
+<% if @post.comments.any? %>
+    <% @post.comments.each do |comment| %>
+      <div>
+        <p><strong><%= comment.author.name %>: </strong> <%= comment.content %></p>
+      </div>
+    <% end %>
+<% else %>
+  <p>No comments yet.</p>
+<% end %>
+</div>
