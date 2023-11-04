@@ -84,6 +84,10 @@
   height: 130px;
  }
 
+ .posts > a {
+  margin: 28px 0;
+ }
+
  .post > p {
   overflow: hidden;
   display: block;

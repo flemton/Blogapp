@@ -9,8 +9,9 @@
 
 <section class="posts">
   <% @posts.each do |post| %>
+  <%= link_to user_post_path(post.author, post) do %>
     <div class="post comment">
-      <h4><%= link_to post.title, user_post_path(post.author, post) %></h4>
+      <h4><%= post.title %></h4>
       <p><%= post.content%><p>
       <p>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </p>
     </div>
@@ -19,6 +20,7 @@
         <p><strong><%= comment.author.name %> : </strong><%= comment.content %></p>
       <% end %>
     </div>
+  <% end %>
   <% end %>
 </section>
 <div>
