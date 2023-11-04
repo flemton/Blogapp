@@ -1,21 +1,24 @@
-<div><img src="<%= @user.photo%>" alt="Photo">
-    <div>
+<div class="posts-container">
+<div class="user-container">
+  <img src="<%= @user.photo%>" alt="Photo">
+    <div class="user">
       <h4>Name: <%= link_to @user.name, user_path(@user) %></h4>
       <p>Number of posts: <%= @user.posts_counter %></p>
     </div>
 </div>
 
-<section>
+<section class="posts">
   <% @posts.each do |post| %>
-    <div>
+    <div class="post comment">
       <h4><%= link_to post.title, user_post_path(post.author, post) %></h4>
       <p><%= post.content%><p>
       <p>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </p>
     </div>
-    <div>
+    <div class="post comment">
       <% post.comments.limit(5).each do |comment| %>
         <p><strong><%= comment.author.name %> : </strong><%= comment.content %></p>
       <% end %>
     </div>
   <% end %>
 </section>
+<div>

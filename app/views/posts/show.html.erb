@@ -1,10 +1,12 @@
-<div>
+<section class="post-details">
+<article class="full-post post">
+<div class="author">
   <h4><%= @post.title %> by <%= @post.author.name %></h4>
   <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
 </div>
 <p> <%= @post.content %></p>
-
-<div>
+</article>
+<div class="post">
 <% if @post.comments.any? %>
     <% @post.comments.each do |comment| %>
       <div>
@@ -15,3 +17,4 @@
   <p>No comments yet.</p>
 <% end %>
 </div>
+</section>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  get '/', to: 'users#index'  # For root
   get '/users', to: 'users#index'  # For displaying all users
   get '/users/:id', to: 'users#show', as: 'user'  # For displaying a single user
   get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts' # For displaying a user's postsget '/users/:user_id/posts/:post_id', to: 'posts#show', as: 'user_post'
