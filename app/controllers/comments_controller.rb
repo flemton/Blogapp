@@ -16,7 +16,8 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    @current_user = current_user
+    @user = current_user
+    @post = Post.find(params[:post_id])
   end
 
   private
@@ -26,6 +27,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:text)
+    params.require(:comment).permit(:content, :post_id)
   end
 end

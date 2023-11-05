@@ -1,12 +1,12 @@
-<%= form_with model: @post, url: user_posts_path, data: { turbo: false } do |form| %>
+<%= form_with(model: @post, url: user_posts_path(user_id: @user.id), data: { turbo: false }) do |form| %>
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
   </div>
 
   <%= form.submit "Create Post" %>

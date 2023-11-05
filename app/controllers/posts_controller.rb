@@ -28,4 +28,10 @@ class PostsController < ApplicationController
     # For displaying a single post by a user
     @post = Post.find(params[:post_id])
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:contente, :text)
+  end
 end
