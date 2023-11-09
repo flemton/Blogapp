@@ -5,10 +5,12 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.post = @post
     @comment.author = current_user
+
     if @comment.save
       flash[:notice] = 'Success'
       redirect_to user_post_path(@post.author, @post)
     else
+      puts "Comment not saved. Errors: #{@comment.errors.full_messages}"
       flash[:alert] = 'Error.'
       render :new, status: :unprocessable_entity
     end
