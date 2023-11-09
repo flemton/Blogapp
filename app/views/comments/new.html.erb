@@ -1,3 +1,4 @@
+<section class="form-container">
 <h1>Add a Comment</h1>
 
 <%= form_for @comment, url: post_comments_path(@post) do |form| %>
@@ -12,3 +13,4 @@
 <% end %>
 
 <%= link_to 'Back to Post', user_post_path(@post.author, @post) %>
+</section>
