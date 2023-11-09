@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :recoverable, :rememberable, :validatable, :confirmable
   has_many :posts, foreign_key: 'author_id'
   has_many :comments
   has_many :likes
