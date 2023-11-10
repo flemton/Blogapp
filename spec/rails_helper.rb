@@ -4,6 +4,9 @@ require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 require 'database_cleaner'
 require 'capybara/rspec'
+require 'selenium-webdriver'
+Capybara.javascript_driver = :selenium_chrome
+Capybara.server = :puma
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
@@ -29,6 +32,9 @@ RSpec.configure do |config|
   end
   config.after(:all) do
     DatabaseCleaner.clean
+  end
+  config.before(:each, type: :system) do
+    driven_by :selenium_chrome
   end
   config.infer_spec_type_from_file_location!
 end
