@@ -156,7 +156,6 @@ button {
 .field {
   display: flex;
   flex-direction: column;
-  
 }
 
 .auth-container {
