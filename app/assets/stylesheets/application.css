@@ -156,5 +156,15 @@ button {
 .field {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.remember {
+  display: flex;
+  flex-direction: row-reverse;
 }
