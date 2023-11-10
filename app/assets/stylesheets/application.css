@@ -146,3 +146,15 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
