@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   def index
     # For displaying all posts by a given user
-    @user = User.includes(posts: :comments).find(params[:user_id])
-    @posts = @user.posts
+    @user = User.includes(posts: [:comments]).find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
     @comments = @posts.map { |post| post.comments.limit(5) }
   end
 
