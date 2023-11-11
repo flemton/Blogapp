@@ -12,7 +12,7 @@
   <%= link_to user_post_path(post.author, post) do %>
     <div class="post comment">
       <h4><%= post.title %></h4>
-      <p><%= post.content%><p>
+      <p><%= post.content.truncate(50)%><p>
       <p>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </p>
     </div>
     <div class="post comment">
