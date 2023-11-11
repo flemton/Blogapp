@@ -56,4 +56,8 @@ RSpec.describe 'User post index page', type: :system do
     click_link(posts.first.title)
     expect(page).to have_current_path(user_post_path(user, posts.first))
   end
+
+  it 'displays a pagination button' do
+    expect(page).to have_css('.button', text: 'Pagination')
+  end
 end
