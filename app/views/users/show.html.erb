@@ -12,11 +12,13 @@
 </div>
 <section>
     <% @user.posts.order(created_at: :desc).limit(3).each do |post| %>
+      <%= link_to user_post_path(@user, post) do %>
       <article class="post">
-        <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
+        <h4><%= post.title %></h4>
         <p><%= post.content%><p>
         <div>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </div>
       </article>
+      <% end %>
   <% end %>
 </section>
 <button><%= link_to "View User's Posts", user_posts_path(@user) %></button>
