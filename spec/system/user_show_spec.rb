@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'User show page', type: :system do
-  let(:user) { User.create(name: 'Mr Anderson', bio: 'Scientist from Mali', photo: 'https://img-link', posts_counter: 0) }
-  let!(:post) { user.posts.create(title: 'My post', content: 'This is my 6th post.', author_id: user.id) }
+  let!(:user) { create(:user, posts_counter: 0) }
+  let!(:post) { create(:post, author: user) }
 
   before do
     user.update(posts_counter: user.posts.count)
@@ -40,5 +40,10 @@ RSpec.describe 'User show page', type: :system do
   it "redirects to the user's posts index page when clicking 'View All Posts'" do
     click_link("View User's Posts")
     expect(page).to have_current_path(user_posts_path(user))
+  end
+
+  it "redirects to a post's show page when clicking a user's post" do
+    click_link(post.title)
+    expect(page).to have_current_path(post_path(post))
   end
 end
