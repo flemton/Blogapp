@@ -43,7 +43,8 @@ RSpec.describe 'User show page', type: :system do
   end
 
   it "redirects to a post's show page when clicking a user's post" do
+    visit user_posts_path(user)
     click_link(post.title)
-    expect(page).to have_current_path(post_path(post))
+    expect(page).to have_current_path(user_post_path(user, post))
   end
 end
