@@ -2,7 +2,7 @@
 <article class="full-post">
 <div class="author">
   <h4><%= @post.title %> by <%= @post.author.name %></h4>
-  <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+  <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
 </div>
 <%= button_to "Like", post_likes_path(@post.author.id, post_id: @post.id), method: :post %>
 <p> <%= @post.content %></p>
@@ -11,7 +11,7 @@
 <% if @post.comments.any? %>
     <% @post.comments.each do |comment| %>
       <div>
-        <p><strong><%= comment.author.name %>: </strong> <%= comment.content %></p>
+        <p><strong><%= link_to comment.author.name, user_path(comment.author) %>: </strong> <%= comment.content %></p>
       </div>
     <% end %>
 <% else %>

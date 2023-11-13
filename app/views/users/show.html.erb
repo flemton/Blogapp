@@ -13,7 +13,7 @@
 <section>
     <% @user.posts.order(created_at: :desc).limit(3).each do |post| %>
       <article class="post">
-        <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
+       <h4><%= link_to post.title, user_post_path(post.author, post) %></h4>
         <p><%= post.content%><p>
         <div>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </div>
       </article>

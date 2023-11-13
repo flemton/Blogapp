@@ -9,10 +9,9 @@
 
 <section class="posts">
   <% @posts.each do |post| %>
-  <%= link_to user_post_path(post.author, post) do %>
     <div class="post comment">
-      <h4><%= post.title %></h4>
-      <p><%= post.content%><p>
+      <h4><%= link_to post.title, user_post_path(post.author, post) %></h4>
+      <p><%= post.content.truncate(50)%><p>
       <p>comments: <%= post.comments_counter%>, likes: <%= post.likes_counter%> </p>
     </div>
     <div class="post comment">
@@ -21,7 +20,10 @@
       <% end %>
     </div>
   <% end %>
-  <% end %>
 </section>
 <%= link_to "New Post", new_post_path %>
 <div>
+
+<div class="button">
+  <button><%= t('.Pagination') %></button>
+</div>
